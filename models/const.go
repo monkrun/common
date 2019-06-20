@@ -8,7 +8,7 @@ package models
 	3.Notice：服务器端对客户端主动发送的消息
 */
 
-//常规接入动作
+//系统级操作
 const (
 	_                            = 1000000 + iota
 	ActiveTypeAddtoQueueRequest  //开始排队
@@ -16,7 +16,7 @@ const (
 	ActiveTypePreToBattleNotice  //准备进图战场(排队成功)
 )
 
-//角色操作动作
+//战场外操作
 const (
 	_                                 = 2000000 + iota
 	ActiveTypeCharacterListRequest    //请求人物列表
@@ -25,17 +25,20 @@ const (
 	ActiveTypeSelectCharacterResponse //选择人物结果
 	ActiveTypeBattleCountDownNotice   //战斗开始倒计时
 	ActiveTypeBattleStartNotice       //战斗开始
-	ActiveTypeBattleIntervalNotice    //战场定时广播
 )
 
-//战斗动作
+//战场内操作
 const (
-	_                         = 3000000 + iota
-	ActiveTypeMoveRequest     //移动
-	ActiveTypeMoveResponse    //移动结果
-	ActiveTypeBuyItemRequest  //购买道具
-	ActiveTypeBuyItemResponse //购买道具
-	ActiveTypeAttachRequest   //攻击
-	ActiveTypeAttachResponse  //攻击
-	ActiveTypeAttachedNotice  //攻击通知
+	_                              = 3000000 + iota
+	ActiveTypeBattleIntervalNotice //战场定时广播
+	ActiveTypeBattleWinNotice      //战斗胜利通知
+	ActiveTypeBattleLoseNotice     //战斗失败通知
+	ActiveTypeBattleEndNotice      //战斗结束通知
+	ActiveTypeMoveRequest          //移动
+	ActiveTypeMoveResponse         //移动结果
+	ActiveTypeBuyItemRequest       //购买道具
+	ActiveTypeBuyItemResponse      //购买道具
+	ActiveTypeAttachRequest        //攻击
+	ActiveTypeAttachResponse       //攻击
+	ActiveTypeAttachedNotice       //攻击通知
 )
