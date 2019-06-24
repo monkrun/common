@@ -17,10 +17,7 @@ var (
 
 //斗士基本属性
 type Fighter struct {
-	Life           int32      //生命值
-	Mana           int32      //魔法值
-	AttackInterval int64      //物理攻击时间间隔，单位毫秒
-	AttackMin      int32      //攻击最小值
-	AttackMax      int32      //攻击最大值
-	AttackType     AttackType //攻击方式
+	Life         int32  //生命值
+	Mana         int32  //魔法值
+	NormalAttack Attack //普通攻击
 }
