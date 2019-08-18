@@ -5,3 +5,9 @@ type RequestBody struct {
 	ActionId   string      //请求ID
 	Body       interface{} //请求内容主体
 }
+
+type ResponseBody struct {
+	ActionType int         //请求类型
+	ActionId   string      //请求ID
+	Body       interface{} //请求主体
+}

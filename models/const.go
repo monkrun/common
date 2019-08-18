@@ -8,12 +8,22 @@ package models
 	3.Notice：服务器端对客户端主动发送的消息
 */
 
+//用于标记当前客户端在什么类型场景中
+const (
+	_             = iota
+	SceneInHall   //在大厅
+	SceneInQueue  //在队列中
+	SceneInBattle //在战斗中
+	SceneInSettle //结算中
+)
+
 //系统级操作
 const (
 	_                            = 1000000 + iota
 	ActiveTypeAddtoQueueRequest  //开始排队
 	ActiveTypeAddtoQueueResponse //排队反馈
 	ActiveTypePreToBattleNotice  //准备进图战场(排队成功)
+	ActiveTypeChangeScene        //切换场景通知
 )
 
 //战场外操作
